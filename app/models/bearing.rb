@@ -1,0 +1,2 @@
+class Bearing < ApplicationRecord
+end
