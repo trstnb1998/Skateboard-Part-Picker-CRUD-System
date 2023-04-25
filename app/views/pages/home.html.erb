@@ -1,0 +1,11 @@
+<h1>Skateboard Part Picker</h1>
+
+<p>Welcome to SPP </p>
+
+<p>SPP is for all skaters that want to try new builds.</p>
+
+<p>Select your parts and find the price most suited to your budget!</p>
+
+<% if @current_user.present? %>
+    <p>Logged in as: <%= @current_user.email %></p>
+<% end %>

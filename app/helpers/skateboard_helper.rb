@@ -1,0 +1,2 @@
+module SkateboardHelper
+end
