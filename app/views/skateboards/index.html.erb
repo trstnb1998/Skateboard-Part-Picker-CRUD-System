@@ -1,2 +1,11 @@
-<h1>Skateboard#index</h1>
-<p>Find me in app/views/skateboard/index.html.erb</p>
+<h1>My Skateboards</h1>
+
+<aside>
+    <h3>All Skate Parts</h3>
+    <h4><%= link_to 'All Decks', decks_path %></h4>
+</aside>
+<% @skateboards.each do |skateboard| %>
+    <%= link_to skateboard.name, skateboard %>
+<% end %>
+
+<%= link_to 'Create new skateboard', new_skateboard_path%>

@@ -1,2 +1,14 @@
-<h1>Decks#show</h1>
-<p>Find me in app/views/decks/show.html.erb</p>
+<h1><%= @deck.name %></h1>
+
+<%= cl_image_tag(@deck.image, :class => 'feature') if @deck.image.present? %>
+<ul>
+    <li>Name: <%= @deck.name %></li>
+    <li>Manufacturer: <%= @deck.manufacturer %></li>
+    <li>Size: <%= @deck.size %></li>
+    <li>Price: <%= number_to_currency @deck.price %> </li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit deck", edit_deck_path(@deck) %>
+    <%= link_to "Delete deck", @deck, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>

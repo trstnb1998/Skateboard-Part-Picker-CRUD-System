@@ -5,5 +5,7 @@
     <li>Trucks: <%= @truck.name %></li>
     <li>Bearings: <%= @bearing.name %></li>
     <li>Wheels: <%= @wheel.name %></li>
-    <li>Price: <%= @deck.price + @truck.price + @bearing.price + @wheel.price %></li>
+    <li>Price: <%= number_to_currency @price %></li>
 </ul>
+<%= link_to "Edit skateboard", edit_skateboard_path %>
+<%= link_to "Delete skateboard", @skateboard, :method => :delete, :data => { :confirm => 'Are you sure?' }  %>

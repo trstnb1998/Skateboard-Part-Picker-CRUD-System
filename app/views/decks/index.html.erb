@@ -1,2 +1,14 @@
-<h1>Decks#index</h1>
-<p>Find me in app/views/decks/index.html.erb</p>
+<div class="header">
+    <h1>All decks</h1>
+    <%= link_to "New deck", new_deck_path(@deck) %>
+</div>   
+
+<% @decks.each do |deck| %>
+    <%=  cl_image_tag(deck.image, :class => 'thumb') if deck.image.present? %>
+    <ul>
+        <li>Name: <%= link_to deck.name, deck%></li>
+        <li>Manufacturer: <%= deck.manufacturer %></li>
+        <li>Size: <%= deck.size %></li>
+        <li>Price: <%= number_to_currency deck.price %></li>
+    </ul>
+<% end %>

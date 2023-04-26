@@ -1,0 +1,15 @@
+<%= form_for @skateboard do |f| %>
+    <%= f.label :deck_id %>
+    <%= f.select :deck_id, Deck.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.label :truck_id %>
+    <%= f.select :truck_id, Truck.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.label :bearing_id %>
+    <%= f.select :bearing_id, Bearing.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.label :wheel_id %>
+    <%= f.select :wheel_id, Wheel.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.submit %>
+<% end %>
