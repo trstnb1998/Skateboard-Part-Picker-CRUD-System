@@ -1,0 +1,21 @@
+<%= form_for(@truck, :html => { :multipart => true }) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :manufacturer %>
+    <%= f.text_field :manufacturer %>
+
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+    <%= f.label :image %>
+    <%= f.cl_image_upload :image %>
+
+    <%= f.submit %>
+<% end%>

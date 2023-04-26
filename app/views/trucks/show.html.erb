@@ -1,2 +1,16 @@
-<h1>Trucks#show</h1>
-<p>Find me in app/views/trucks/show.html.erb</p>
+<h1><%= @truck.name %></h1>
+
+<%= cl_image_tag(@truck.image, :class => 'feature') if @truck.image.present? %>
+
+<ul>
+    <li>Name: <%= @truck.name %></li>
+    <li>Manufacturer: <%= @truck.manufacturer %></li>
+    <li>Size: <%= @truck.size %></li>
+    <li>Weight: <%= @truck.weight %></li>
+    <li>Price: <%= number_to_currency @truck.price %> </li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit truck", edit_truck_path(@truck) %>
+    <%= link_to "Delete truck", @truck, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>

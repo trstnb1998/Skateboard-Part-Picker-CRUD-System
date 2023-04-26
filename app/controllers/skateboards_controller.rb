@@ -40,6 +40,6 @@ class SkateboardsController < ApplicationController
 
   private
   def skateboard_params
-    params.require(:skateboard).permit(:deck_id, :truck_id, :bearing_id, :wheel_id, :price)
+    params.require(:skateboard).permit(:deck_id, :truck_id, :bearing_id, :wheel_id, :price, :name)
   end
 end

@@ -24,10 +24,8 @@ class DecksController < ApplicationController
   def update
     deck = Deck.find params[:id]
     if params[:file].present?
-      print "upload!"
       req = Cloudinary::Uploader.upload(params[:file])
       deck.image = req["public_id"]
-      p req["public_id"]
     end
     deck.update_attributes deck_params
     deck.save

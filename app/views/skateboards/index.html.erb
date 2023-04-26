@@ -3,9 +3,16 @@
 <aside>
     <h3>All Skate Parts</h3>
     <h4><%= link_to 'All Decks', decks_path %></h4>
+    <h4><%= link_to 'All Trucks', trucks_path %></h4>
+    <h4><%= link_to 'All Bearings', bearings_path %></h4>
+    <h4><%= link_to 'All Wheels', wheels_path %></h4>
 </aside>
+<div class="content">
 <% @skateboards.each do |skateboard| %>
-    <%= link_to skateboard.name, skateboard %>
+    <ol>
+        <li><h2><%= link_to skateboard.name, skateboard %></h2></li>
+    </ol>
 <% end %>
 
 <%= link_to 'Create new skateboard', new_skateboard_path%>
+</div>
