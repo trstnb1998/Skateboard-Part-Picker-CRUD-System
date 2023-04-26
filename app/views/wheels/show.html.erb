@@ -1,2 +1,14 @@
-<h1>Wheels#show</h1>
-<p>Find me in app/views/wheels/show.html.erb</p>
+<h1><%= @wheel.name %></h1>
+
+<%= cl_image_tag(@wheel.image, :class => 'feature') if @wheel.image.present? %>
+<ul>
+    <li>Name: <%= @wheel.name %></li>
+    <li>Manufacturer: <%= @wheel.manufacturer %></li>
+    <li>Size: <%= @wheel.size %></li>
+    <li>Price: <%= number_to_currency @wheel.price %> </li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit wheels", edit_wheel_path(@wheel) %>
+    <%= link_to "Delete wheels", @wheel, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>
