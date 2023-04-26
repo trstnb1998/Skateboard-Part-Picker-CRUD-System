@@ -27,8 +27,7 @@ class TrucksController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       truck.image = req["public_id"]
     end
-    truck.update_attributes truck_params
-    truck.save
+    truck.update truck_params
     redirect_to truck_path(truck)
   end
 

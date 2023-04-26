@@ -1,12 +1,12 @@
 <div class="header">
     <h1>All Trucks</h1>
-    <%= link_to "New truck", new_truck_path(@truck) %>
+    <%= link_to "New trucks", new_truck_path(@truck) %>
 </div>  
 
 <% @trucks.each do |truck| %>
     <%= cl_image_tag(truck.image, :class => 'thumb') if truck.image.present? %>
     <ul>
-        <li>Name: <%= link_to truck.name, truck%></li>
+        <li>Name: <%= link_to truck.name, truck %></li>
         <li>Manufacturer: <%= truck.manufacturer %></li>
         <li>Size: <%= truck.size %></li>
         <li>Weight: <%= truck.weight %></li>

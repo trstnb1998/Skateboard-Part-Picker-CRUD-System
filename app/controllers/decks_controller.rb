@@ -27,8 +27,7 @@ class DecksController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       deck.image = req["public_id"]
     end
-    deck.update_attributes deck_params
-    deck.save
+    deck.update deck_params
     redirect_to deck_path(deck)
   end
 

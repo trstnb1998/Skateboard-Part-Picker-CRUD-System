@@ -1,2 +1,14 @@
-<h1>Bearings#show</h1>
-<p>Find me in app/views/bearings/show.html.erb</p>
+<h1><%= @bearing.name %></h1>
+
+<%= cl_image_tag(@bearing.image, :class => 'feature') if @bearing.image.present? %>
+<ul>
+    <li>Name: <%= @bearing.name %></li>
+    <li>Manufacturer: <%= @bearing.manufacturer %></li>
+    <li>Material: <%= @bearing.material %></li>
+    <li>Price: <%= number_to_currency @bearing.price %> </li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit bearings", edit_bearing_path(@bearing) %>
+    <%= link_to "Delete bearings", @bearing, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>
