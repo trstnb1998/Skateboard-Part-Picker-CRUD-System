@@ -1,7 +1,8 @@
 class SkateboardsController < ApplicationController
+  before_action :check_if_owner, :only => [:show]
 
   def index
-    @skateboards = Skateboard.all
+    @skateboards = Skateboard.where(:user_id => @current_user)
   end
 
   def new
@@ -10,6 +11,7 @@ class SkateboardsController < ApplicationController
 
   def create
     skateboard = Skateboard.create skateboard_params
+    skateboard.update(:user_id => @current_user.id)
     redirect_to skateboard
   end
 
@@ -41,5 +43,10 @@ class SkateboardsController < ApplicationController
   private
   def skateboard_params
     params.require(:skateboard).permit(:deck_id, :truck_id, :bearing_id, :wheel_id, :price, :name)
+  end
+
+  def check_if_owner
+    skateboard = Skateboard.find_by :id => params[:id]
+    redirect_to root_path unless @current_user.id == skateboard.user_id
   end
 end
