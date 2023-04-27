@@ -15,8 +15,20 @@
       <nav>
         <%= link_to "Home", root_path %>
         <% if @current_user.present?%>
-            <%= link_to "Logout", login_path, :method => :delete %>
+            |
             <%= link_to "My skateboards", skateboards_path %>
+            |
+            <% if current_page?(skateboards_path) %>
+                <%= link_to 'All Decks', decks_path %>
+                |
+                <%= link_to 'All Trucks', trucks_path %>
+                |
+                <%= link_to 'All Bearings', bearings_path %>
+                |
+                <%= link_to 'All Wheels', wheels_path %>
+                |
+            <% end %>
+            <%= link_to "Logout", login_path, :method => :delete %>
         <% else %>
             <%= link_to "Log in", login_path %>
         <% end %>

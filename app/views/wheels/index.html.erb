@@ -1,3 +1,7 @@
+<div class="backlinkindex">
+    <%= link_to 'Go back', skateboards_path %>
+</div>
+
 <div class="header">
     <h1>All Wheels</h1>
     <%= link_to "New wheels", new_wheel_path(@wheel) %>
@@ -6,10 +10,6 @@
 <% @wheels.each do |wheel| %>
     <%= cl_image_tag(wheel.image, :class => 'thumb') if wheel.image.present? %>
     <ul>
-        <li>Name: <%= link_to wheel.name, wheel %></li>
-        <li>Manufacturer: <%= wheel.manufacturer %></li>
-        <li>Size: <%= wheel.size %></li>
-        <li>Duro: <%= wheel.duro %></li>
-        <li>Price: <%= number_to_currency wheel.price %></li>
+        <li><%= link_to wheel.name, wheel %></li>
     </ul>
 <% end %>

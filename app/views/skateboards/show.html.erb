@@ -1,5 +1,8 @@
-<h1>Skateboard</h1>
+<h1><%= @skateboard.name %></h1>
 
+<div class="backlink">
+    <%= link_to 'Go back', skateboards_path %>
+</div>
 <ul>
     <li>Deck: <%= @deck.name %></li>
     <li>Trucks: <%= @truck.name %></li>

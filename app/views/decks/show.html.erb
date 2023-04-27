@@ -1,4 +1,6 @@
-<h1><%= @deck.name %></h1>
+<div class="backlinkshow">
+    <%= link_to 'Go back', decks_path %>
+</div>
 
 <%= cl_image_tag(@deck.image, :class => 'feature') if @deck.image.present? %>
 <ul>

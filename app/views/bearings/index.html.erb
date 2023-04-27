@@ -1,3 +1,7 @@
+<div class="backlinkindex">
+    <%= link_to 'Go back', skateboards_path %>
+</div>
+
 <div class="header">
     <h1>All bearings</h1>
     <%= link_to "New bearings", new_bearing_path(@bearing) %>
@@ -6,9 +10,6 @@
 <% @bearings.each do |bearing| %>
     <%= cl_image_tag(bearing.image, :class => 'thumb') if bearing.image.present? %>
     <ul>
-        <li>Name: <%= link_to bearing.name, bearing %></li>
-        <li>Manufacturer: <%= bearing.manufacturer %></li>
-        <li>Material: <%= bearing.material %> </li>
-        <li>Price: <%= number_to_currency bearing.price %></li>
+        <li><%= link_to bearing.name, bearing %></li>
     </ul>
 <% end%>

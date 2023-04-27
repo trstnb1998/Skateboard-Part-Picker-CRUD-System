@@ -1,4 +1,7 @@
-<h1><%= @bearing.name %></h1>
+
+<div class="backlinkshow">
+    <%= link_to 'Go back', bearings_path %>
+</div>
 
 <%= cl_image_tag(@bearing.image, :class => 'feature') if @bearing.image.present? %>
 <ul>

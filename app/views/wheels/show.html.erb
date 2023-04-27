@@ -1,4 +1,6 @@
-<h1><%= @wheel.name %></h1>
+<div class="backlinkshow">
+    <%= link_to 'Go back', wheels_path %>
+</div>
 
 <%= cl_image_tag(@wheel.image, :class => 'feature') if @wheel.image.present? %>
 <ul>
