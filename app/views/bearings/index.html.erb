@@ -2,14 +2,19 @@
     <%= link_to 'Go back', skateboards_path %>
 </div>
 
+<%# Link for All bearings %>
 <div class="header">
     <h1>All bearings</h1>
     <%= link_to "New bearings", new_bearing_path(@bearing) %>
 </div>
 
-<% @bearings.each do |bearing| %>
-    <%= cl_image_tag(bearing.image, :class => 'thumb') if bearing.image.present? %>
+
+<%# Shows bearing index using the rules set bin the controller %>
+<% @bearings.each do |bearing| %> 
+    <%# Shows all images on index with cloudinary %>
+    <%= cl_image_tag(bearing.image, :class => 'thumb') if bearing.image.present? %> 
     <ul>
+        <%# Link to bearing id %>
         <li><%= link_to bearing.name, bearing %></li>
     </ul>
 <% end%>

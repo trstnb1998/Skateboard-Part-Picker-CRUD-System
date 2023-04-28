@@ -1,30 +1,39 @@
 class SkateboardsController < ApplicationController
   before_action :check_if_owner, :only => [:show]
 
+  # shows all of the users skateboards
   def index
     @skateboards = Skateboard.where(:user_id => @current_user)
   end
 
+
+  # Shows new skateboard form
   def new
     @skateboard = Skateboard.new
   end
 
+  # Creates user's new skateboard
   def create
     skateboard = Skateboard.create skateboard_params
     skateboard.update(:user_id => @current_user.id)
     redirect_to skateboard
   end
 
+  # Edit user's skateboard
   def edit
     @skateboard = Skateboard.find params[:id]
   end
 
+
+  # Allows for skateboard to be updated
   def update
     skateboard = Skateboard.find params[:id]
     skateboard.update skateboard_params
     redirect_to skateboard
   end
   
+
+  # Show's user's skateboard index and calculates all the part's prices
   def show
     @skateboard = Skateboard.find params[:id]
     @deck = Deck.find @skateboard.deck_id
@@ -34,6 +43,7 @@ class SkateboardsController < ApplicationController
     @price = @deck.price + @truck.price + @bearing.price + @wheel.price
   end
 
+  # Destroy skateboard
   def destroy
     skateboard = Skateboard.find params[:id]
     skateboard.destroy

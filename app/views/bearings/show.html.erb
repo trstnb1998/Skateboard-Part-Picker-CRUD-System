@@ -3,14 +3,17 @@
     <%= link_to 'Go back', bearings_path %>
 </div>
 
+<%# shows bearings image %>
 <%= cl_image_tag(@bearing.image, :class => 'feature') if @bearing.image.present? %>
 <ul>
+    <%# List of all the data values %>
     <li>Name: <%= @bearing.name %></li>
     <li>Manufacturer: <%= @bearing.manufacturer %></li>
     <li>Material: <%= @bearing.material %></li>
     <li>Price: <%= number_to_currency @bearing.price %> </li>
 </ul>
 
+<%# edit and delete link %>
 <div class="controls">
     <%= link_to "Edit bearings", edit_bearing_path(@bearing) %>
     <%= link_to "Delete bearings", @bearing, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

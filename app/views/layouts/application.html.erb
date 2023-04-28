@@ -13,6 +13,8 @@
   <body>
     <div class="container">
       <nav>
+
+        <%# Nested if statement: if the user is logged in show My Skateboards and if user is in skateboards_path, show all parts links  %>
         <%= link_to "Home", root_path %>
         <% if @current_user.present?%>
             |
@@ -28,6 +30,8 @@
                 <%= link_to 'All Wheels', wheels_path %>
                 |
             <% end %>
+
+            <%# Links to log in and out %>
             <%= link_to "Logout", login_path, :method => :delete %>
         <% else %>
             <%= link_to "Log in", login_path %>
