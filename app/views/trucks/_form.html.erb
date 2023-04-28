@@ -1,6 +1,6 @@
 <%= form_for(@truck, :html => { :multipart => true }) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
 
     <%= f.label :manufacturer %>
     <%= f.text_field :manufacturer %>

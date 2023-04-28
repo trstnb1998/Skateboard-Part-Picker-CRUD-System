@@ -1,19 +1,19 @@
 <%= form_for @skateboard do |f| %>
 
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
 
     <%= f.label :deck_id %>
-    <%= f.select :deck_id, Deck.pluck(:name, :id), :include_blank => true %>
+    <%= f.select :deck_id, Deck.pluck(:name, :id), :required => true %>
 
     <%= f.label :truck_id %>
-    <%= f.select :truck_id, Truck.pluck(:name, :id), :include_blank => true %>
+    <%= f.select :truck_id, Truck.pluck(:name, :id), :required => true %>
 
     <%= f.label :bearing_id %>
-    <%= f.select :bearing_id, Bearing.pluck(:name, :id), :include_blank => true %>
+    <%= f.select :bearing_id, Bearing.pluck(:name, :id), :required => true %>
 
     <%= f.label :wheel_id %>
-    <%= f.select :wheel_id, Wheel.pluck(:name, :id), :include_blank => true %>
+    <%= f.select :wheel_id, Wheel.pluck(:name, :id), :required => true  %>
 
     <%= f.submit %>
 <% end %>
