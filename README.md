@@ -3,7 +3,7 @@ For my Project 1 I have created a skateboard part picker app
 
 It allows any user to create a skateboard and get the estimate price within their price range.
 
-! [home sample](../Project1/app/assets/images/sample.png)
+! [home sample](/app/assets/images/sample.png)
 
 
 ## About My Project
